@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">Store Inventory</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    
+    <string name="email">email</string>
+    <string name="password">Password</string>
+
+    <string name="enter_your_credentials">Please enter your credentials</string>
+    
+    <!-- Content Descriptions -->
+    <string name="img_android_logo">Android Logo</string>
 </resources>
