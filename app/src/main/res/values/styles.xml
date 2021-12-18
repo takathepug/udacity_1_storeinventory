@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!-- Android complaint about low contrast of the hint text -->
+    <style name="EditTextContrastHint" parent="Widget.AppCompat.EditText">
+        <item name="android:textColorHint">@color/grey</item>
+    </style>
+    <style name="TextBold" parent="Widget.AppCompat.TextView">
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

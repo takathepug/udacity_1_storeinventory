@@ -3,9 +3,13 @@
     
     <string name="email">email</string>
     <string name="password">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="log_in">Log In</string>
 
-    <string name="enter_your_credentials">Please enter your credentials</string>
+    <string name="enter_your_credentials">Please enter your credentials below</string>
     
     <!-- Content Descriptions -->
     <string name="img_android_logo">Android Logo</string>
+    <string name="edit_text_email">Enter email</string>
+    <string name="edit_text_password">Enter password</string>
 </resources>
