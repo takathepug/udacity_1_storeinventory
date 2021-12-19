@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/login_destination"
-        android:name="com.example.storeinventory.screens.LoginFragment"
+        android:name="com.example.storeinventory.screens.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
 </navigation>
