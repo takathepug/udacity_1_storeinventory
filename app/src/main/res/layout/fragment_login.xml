@@ -17,46 +17,51 @@
 
         <ImageView
             android:id="@+id/imgView_android_logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:contentDescription="@string/img_android_logo"
-            android:src="@android:drawable/sym_def_app_icon"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/img_login_screen"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_fruit_plate"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_up"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            tools:src="@drawable/ic_fruit_plate" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_horizontal_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3" />
 
         <TextView
             android:id="@+id/textView_please_credentials"
             style="@style/TextBold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
             android:text="@string/enter_your_credentials"
-            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgView_android_logo"
-            app:layout_constraintVertical_bias="0.2" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.3" />
+            app:layout_constraintTop_toBottomOf="@+id/imgView_android_logo" />
 
         <TextView
             android:id="@+id/textView_email"
             style="@style/TextBold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             android:text="@string/email"
-            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical"
-            app:layout_constraintTop_toBottomOf="@+id/textView_please_credentials" />
+            app:layout_constraintBottom_toTopOf="@+id/editText_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_please_credentials"
+            app:layout_constraintVertical_chainStyle="spread" />
 
         <EditText
             android:id="@+id/editText_email"
@@ -64,27 +69,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
             android:autofillHints="emailAddress"
             android:ems="10"
             android:hint="@string/edit_text_email"
             android:inputType="textEmailAddress"
             android:minHeight="48dp"
             android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView_email"
-            app:layout_constraintStart_toStartOf="@+id/guideline_vertical"
-            app:layout_constraintTop_toBottomOf="@+id/textView_please_credentials" />
+            app:layout_constraintBottom_toTopOf="@+id/textView_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_email" />
 
         <TextView
             android:id="@+id/textView_password"
             style="@style/TextBold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
             android:text="@string/password"
-            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical"
-            app:layout_constraintTop_toBottomOf="@+id/textView_email" />
+            app:layout_constraintBottom_toTopOf="@+id/editText_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_email" />
 
         <EditText
             android:id="@+id/editText_password"
@@ -92,16 +100,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
             android:autofillHints="password"
             android:ems="10"
             android:hint="@string/edit_text_password"
             android:inputType="textPassword"
             android:minHeight="48dp"
             android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView_password"
-            app:layout_constraintStart_toStartOf="@+id/guideline_vertical"
-            app:layout_constraintTop_toBottomOf="@+id/editText_email" />
+            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_password" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_horizontal"
@@ -114,11 +124,10 @@
             android:id="@+id/button_sign_up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
             android:text="@string/sign_up"
+            app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/button_log_in"
-            app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline_horizontal" />
 
@@ -126,7 +135,6 @@
             android:id="@+id/button_log_in"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
             android:text="@string/log_in"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
