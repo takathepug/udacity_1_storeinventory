@@ -11,11 +11,12 @@
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_login_destination_to_welcomeFragment"
+            android:id="@+id/action_login_destination_to_welcome_destination"
             app:destination="@id/welcome_destination" />
     </fragment>
     <fragment
         android:id="@+id/welcome_destination"
         android:name="com.example.storeinventory.screens.welcome.WelcomeFragment"
-        android:label="WelcomeFragment" />
+        android:label="WelcomeFragment"
+        tools:layout="@layout/fragment_welcome"/>
 </navigation>

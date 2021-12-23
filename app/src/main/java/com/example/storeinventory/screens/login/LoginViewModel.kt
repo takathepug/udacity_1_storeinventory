@@ -8,8 +8,22 @@ import androidx.lifecycle.ViewModel
  * A [ViewModel] containing log in logic
  */
 class LoginViewModel : ViewModel() {
-    // The current word
-    private val _email = MutableLiveData<String>()
-    val email: LiveData<String>
-        get() = _email
+
+    val email: MutableLiveData<String> = MutableLiveData(null)
+
+    val password: MutableLiveData<String> = MutableLiveData(null)
+
+
+    private val _eventLogin = MutableLiveData<Boolean>()
+    val eventLogin: LiveData<Boolean>
+        get() = _eventLogin
+
+    init {
+        _eventLogin.value = false
+    }
+
+    // In a real app, do something with credentials
+    fun onLogin() {
+        _eventLogin.value = true
+    }
 }

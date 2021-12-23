@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 
 import com.example.storeinventory.R
 import com.example.storeinventory.databinding.FragmentLoginBinding
@@ -19,7 +21,8 @@ class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
@@ -38,6 +41,15 @@ class LoginFragment : Fragment() {
 
         // Binding can observe LiveData updates
         binding.lifecycleOwner = this
+
+        // Navigates back to title when button is pressed
+        viewModel.eventLogin.observe(viewLifecycleOwner, Observer { login ->
+            if (login) {
+                findNavController().navigate(
+                    LoginFragmentDirections.actionLoginDestinationToWelcomeDestination())
+                // user will remain logged in
+            }
+        })
 
         return binding.root
     }
