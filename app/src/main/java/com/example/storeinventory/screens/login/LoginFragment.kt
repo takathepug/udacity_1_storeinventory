@@ -1,6 +1,7 @@
 package com.example.storeinventory.screens.login
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +18,8 @@ import com.example.storeinventory.databinding.FragmentLoginBinding
  * A [Fragment] subclass containing the Login screen.
  */
 class LoginFragment : Fragment() {
+    private val TAG: String = javaClass.simpleName
+
     private lateinit var viewModel: LoginViewModel
     private lateinit var binding: FragmentLoginBinding
 
@@ -42,16 +45,22 @@ class LoginFragment : Fragment() {
         // Binding can observe LiveData updates
         binding.lifecycleOwner = this
 
-        // Navigates back to title when button is pressed
         viewModel.eventLogin.observe(viewLifecycleOwner, Observer { login ->
             if (login) {
-                findNavController().navigate(
-                    LoginFragmentDirections.actionLoginDestinationToWelcomeDestination())
-                // user will remain logged in
+                Log.d(TAG, "Login event received")
+
+                navigateToWelcome()
+
+                viewModel.onLoginCompleted()
             }
         })
 
         return binding.root
+    }
+
+    private fun navigateToWelcome() {
+        findNavController().navigate(
+            LoginFragmentDirections.actionLoginDestinationToWelcomeDestination())
     }
 
 }

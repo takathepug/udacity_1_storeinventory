@@ -18,5 +18,15 @@
         android:id="@+id/welcome_destination"
         android:name="com.example.storeinventory.screens.welcome.WelcomeFragment"
         android:label="WelcomeFragment"
-        tools:layout="@layout/fragment_welcome"/>
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/action_welcome_destination_to_instruction_destination"
+            app:destination="@id/instruction_destination" />
+    </fragment>
+    <fragment
+        android:id="@+id/instruction_destination"
+        android:name="com.example.storeinventory.screens.instruction.InstructionFragment"
+        android:label="InstructionFragment"
+        tools:layout="@layout/fragment_instruction" >
+    </fragment>
 </navigation>
