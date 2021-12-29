@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import com.example.storeinventory.EventObserver
 import com.example.storeinventory.R
 import com.example.storeinventory.databinding.FragmentInstructionBinding
+import androidx.navigation.fragment.findNavController
 
 /**
  * A [Fragment] containing the instructions screen
@@ -41,7 +43,19 @@ class InstructionFragment : Fragment() {
         // Binding can observe LiveData updates
         binding.lifecycleOwner = this
 
+        // Navigation
+        setupNavigateToList()
+
         return binding.root
+    }
+
+    private fun setupNavigateToList() {
+        viewModel.eventNext.observe(viewLifecycleOwner, EventObserver {
+            val action = InstructionFragmentDirections
+                .actionInstructionDestinationToListDestination()
+
+            findNavController().navigate(action)
+        })
     }
 
 }

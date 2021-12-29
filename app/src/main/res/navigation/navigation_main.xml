@@ -28,5 +28,13 @@
         android:name="com.example.storeinventory.screens.instruction.InstructionFragment"
         android:label="InstructionFragment"
         tools:layout="@layout/fragment_instruction" >
+        <action
+            android:id="@+id/action_instruction_destination_to_list_destination"
+            app:destination="@id/list_destination" />
     </fragment>
+    <fragment
+        android:id="@+id/list_destination"
+        android:name="com.example.storeinventory.screens.list.ListFragment"
+        android:label="ListFragment"
+        tools:layout="@layout/fragment_list" />
 </navigation>

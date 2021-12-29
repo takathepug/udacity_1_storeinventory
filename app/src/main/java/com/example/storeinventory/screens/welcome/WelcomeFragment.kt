@@ -8,11 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.example.storeinventory.EventObserver
 import com.example.storeinventory.R
 import com.example.storeinventory.databinding.FragmentWelcomeBinding
-import com.example.storeinventory.screens.login.LoginFragmentDirections
 
 /**
  * A [Fragment] containing the welcome screen
@@ -45,22 +44,19 @@ class WelcomeFragment : Fragment() {
         // Binding can observe LiveData updates
         binding.lifecycleOwner = this
 
-        viewModel.eventNext.observe(viewLifecycleOwner, Observer { next ->
-            if (next) {
-                Log.d(TAG, "Next event received")
-            }
-
-            navigateToInstruction()
-
-            viewModel.onNextCompleted()
-        })
+        // Navigation
+        setupNavigateToInstruction()
 
         return binding.root
     }
 
-    private fun navigateToInstruction() {
-        findNavController().navigate(
-            WelcomeFragmentDirections.actionWelcomeDestinationToInstructionDestination())
+    private fun setupNavigateToInstruction() {
+        viewModel.eventNext.observe(viewLifecycleOwner, EventObserver {
+            val action = WelcomeFragmentDirections
+                .actionWelcomeDestinationToInstructionDestination()
+
+            findNavController().navigate(action)
+        })
     }
 
 }
