@@ -1,11 +1,17 @@
 <resources>
-    <string name="app_name">Fruit Store Inventory</string>
+    <string name="app_name">Fruit Store Inc</string>
 
     <string name="email">email</string>
     <string name="password">Password</string>
     <string name="sign_up">Sign Up</string>
     <string name="log_in">Log In</string>
     <string name="next">Next</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+
+    <string name="peach">Peach</string>
+    <string name="pear">Pear</string>
+    <string name="strawberry">Strawberry</string>
 
     <string name="enter_your_credentials">Please enter your credentials below</string>
 

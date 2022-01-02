@@ -1,20 +1,26 @@
-package com.example.storeinventory.screens.list
+package com.example.storeinventory.screens.detail
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.example.storeinventory.screens.SharedListDetailViewModel
+import com.example.storeinventory.EventObserver
 import com.example.storeinventory.R
-import com.example.storeinventory.databinding.FragmentListBinding
+import com.example.storeinventory.databinding.FragmentDetailBinding
+import com.example.storeinventory.screens.SharedListDetailViewModel
 
-class ListFragment : Fragment() {
+/**
+ * A [Fragment] containing adding fruits to the inventory
+ */
+class DetailFragment : Fragment() {
+    private val TAG: String = javaClass.simpleName
+
     private lateinit var viewModel: SharedListDetailViewModel
-    private lateinit var binding: FragmentListBinding
+    private lateinit var binding: FragmentDetailBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,10 +30,9 @@ class ListFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(
             inflater,
-            R.layout.fragment_list,
+            R.layout.fragment_detail,
             container,
-            false
-        )
+            false)
 
         // Get the viewmodel
         viewModel = ViewModelProvider(this).get(SharedListDetailViewModel::class.java)
@@ -35,19 +40,19 @@ class ListFragment : Fragment() {
         // Allow layout access to VieWModel
         binding.sharedListDetailViewModel = viewModel
 
-        // Binding can observe LiveData updates
-        binding.lifecycleOwner = this
-
         // Navigation
-        setupNavigateToDetail()
+        setupNavigation()
 
         return binding.root
     }
 
-    private fun setupNavigateToDetail() {
-        findNavController().navigate(
-            ListFragmentDirections
-                .actionListDestinationToDetailDestination()
-        )
+    private fun setupNavigation() {
+        viewModel.eventCancelFruit.observe(viewLifecycleOwner, EventObserver {
+            val action = DetailFragmentDirections
+                .actionDetailDestinationToListDestination()
+
+            findNavController().navigate(action)
+        })
     }
+
 }

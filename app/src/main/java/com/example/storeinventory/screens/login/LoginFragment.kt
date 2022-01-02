@@ -48,17 +48,17 @@ class LoginFragment : Fragment() {
         viewModel.eventLogin.observe(viewLifecycleOwner, Observer { login ->
             if (login) {
                 Log.d(TAG, "Login event received")
-
-                navigateToWelcome()
-
                 viewModel.onLoginCompleted()
             }
         })
 
+        // Navigation
+        setupNavigateToWelcome()
+
         return binding.root
     }
 
-    private fun navigateToWelcome() {
+    private fun setupNavigateToWelcome() {
         findNavController().navigate(
             LoginFragmentDirections.actionLoginDestinationToWelcomeDestination())
     }
