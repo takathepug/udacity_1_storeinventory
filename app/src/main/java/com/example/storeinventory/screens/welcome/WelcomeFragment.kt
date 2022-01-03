@@ -52,10 +52,8 @@ class WelcomeFragment : Fragment() {
 
     private fun setupNavigateToInstruction() {
         viewModel.eventNext.observe(viewLifecycleOwner, EventObserver {
-            val action = WelcomeFragmentDirections
-                .actionWelcomeDestinationToInstructionDestination()
-
-            findNavController().navigate(action)
+            findNavController().navigate(
+                WelcomeFragmentDirections.actionWelcomeDestinationToInstructionDestination())
         })
     }
 

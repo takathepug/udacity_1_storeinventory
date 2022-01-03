@@ -10,12 +10,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.example.storeinventory.EventObserver
 
 import com.example.storeinventory.R
 import com.example.storeinventory.databinding.FragmentLoginBinding
 
 /**
- * A [Fragment] subclass containing the Login screen.
+ * A [Fragment] containing the login screen.
  */
 class LoginFragment : Fragment() {
     private val TAG: String = javaClass.simpleName
@@ -45,13 +46,6 @@ class LoginFragment : Fragment() {
         // Binding can observe LiveData updates
         binding.lifecycleOwner = this
 
-        viewModel.eventLogin.observe(viewLifecycleOwner, Observer { login ->
-            if (login) {
-                Log.d(TAG, "Login event received")
-                viewModel.onLoginCompleted()
-            }
-        })
-
         // Navigation
         setupNavigateToWelcome()
 
@@ -59,8 +53,10 @@ class LoginFragment : Fragment() {
     }
 
     private fun setupNavigateToWelcome() {
-        findNavController().navigate(
-            LoginFragmentDirections.actionLoginDestinationToWelcomeDestination())
+        viewModel.eventLogin.observe(viewLifecycleOwner, EventObserver {
+            findNavController().navigate(
+                LoginFragmentDirections.actionLoginDestinationToWelcomeDestination())
+        })
     }
 
 }

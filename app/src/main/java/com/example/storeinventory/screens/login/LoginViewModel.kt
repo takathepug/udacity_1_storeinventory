@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.storeinventory.Event
 
 /**
  * A [ViewModel] containing log in logic
@@ -14,22 +15,14 @@ class LoginViewModel : ViewModel() {
     val email: MutableLiveData<String> = MutableLiveData(null)
     val password: MutableLiveData<String> = MutableLiveData(null)
 
-    private val _eventLogin = MutableLiveData<Boolean>()
-    val eventLogin: LiveData<Boolean>
+    private val _eventLogin = MutableLiveData<Event<Unit>>()
+    val eventLogin: LiveData<Event<Unit>>
         get() = _eventLogin
-
-    init {
-        _eventLogin.value = false
-    }
 
     // In a real app, do something with credentials
     fun onLogin() {
         Log.d(TAG, "User ${email.value} attempting login")
-        _eventLogin.value = true
+        _eventLogin.value = Event(Unit)
     }
 
-    fun onLoginCompleted() {
-        Log.d(TAG, "Login for user ${email.value} completed")
-        _eventLogin.value = false
-    }
 }

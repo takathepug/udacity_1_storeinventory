@@ -16,7 +16,7 @@
         android:layout_height="match_parent" >
 
         <ImageView
-            android:id="@+id/imgView_android_logo"
+            android:id="@+id/imgView_fruit_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="@dimen/default_margin"
@@ -42,18 +42,18 @@
             style="@style/TextBold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="@dimen/double_margin"
             android:text="@string/enter_your_credentials"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgView_android_logo" />
+            app:layout_constraintTop_toBottomOf="@+id/imgView_fruit_icon" />
 
         <TextView
             android:id="@+id/textView_email"
             style="@style/TextBold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="@dimen/default_margin"
             android:layout_marginTop="@dimen/default_margin"
             android:text="@string/email"
             app:layout_constraintBottom_toTopOf="@+id/editText_email"
@@ -68,9 +68,10 @@
             style="@style/EditTextContrastHint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:autofillHints="emailAddress"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginBottom="@dimen/default_margin"
             android:ems="10"
+            android:autofillHints="emailAddress"
             android:hint="@string/edit_text_email"
             android:inputType="textEmailAddress"
             android:minHeight="48dp"
@@ -102,8 +103,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/default_margin"
             android:layout_marginBottom="@dimen/default_margin"
-            android:autofillHints="password"
             android:ems="10"
+            android:autofillHints="password"
             android:hint="@string/edit_text_password"
             android:inputType="textPassword"
             android:minHeight="48dp"

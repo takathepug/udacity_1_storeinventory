@@ -1,6 +1,7 @@
 package com.example.storeinventory.screens.list
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -8,11 +9,14 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.example.storeinventory.EventObserver
 import com.example.storeinventory.screens.SharedListDetailViewModel
 import com.example.storeinventory.R
 import com.example.storeinventory.databinding.FragmentListBinding
 
 class ListFragment : Fragment() {
+    private val TAG: String = javaClass.simpleName
+
     private lateinit var viewModel: SharedListDetailViewModel
     private lateinit var binding: FragmentListBinding
 
@@ -45,9 +49,11 @@ class ListFragment : Fragment() {
     }
 
     private fun setupNavigateToDetail() {
-        findNavController().navigate(
-            ListFragmentDirections
-                .actionListDestinationToDetailDestination()
-        )
+        viewModel.eventAddFruit.observe(viewLifecycleOwner, EventObserver {
+            findNavController().navigate(
+                ListFragmentDirections
+                    .actionListDestinationToDetailDestination()
+            )
+        })
     }
 }

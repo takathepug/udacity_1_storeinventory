@@ -1,6 +1,7 @@
 package com.example.storeinventory.screens.detail
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.storeinventory.EventObserver
 import com.example.storeinventory.R
 import com.example.storeinventory.databinding.FragmentDetailBinding
+import com.example.storeinventory.model.Fruit
 import com.example.storeinventory.screens.SharedListDetailViewModel
 
 /**
@@ -32,7 +34,8 @@ class DetailFragment : Fragment() {
             inflater,
             R.layout.fragment_detail,
             container,
-            false)
+            false
+        )
 
         // Get the viewmodel
         viewModel = ViewModelProvider(this).get(SharedListDetailViewModel::class.java)
@@ -46,12 +49,20 @@ class DetailFragment : Fragment() {
         return binding.root
     }
 
+    // Navigation
     private fun setupNavigation() {
         viewModel.eventCancelFruit.observe(viewLifecycleOwner, EventObserver {
-            val action = DetailFragmentDirections
-                .actionDetailDestinationToListDestination()
+            findNavController().navigate(
+                DetailFragmentDirections
+                    .actionDetailDestinationToListDestination()
+            )
+        })
 
-            findNavController().navigate(action)
+        viewModel.eventSaveFruit.observe(viewLifecycleOwner, EventObserver {
+            findNavController().navigate(
+                DetailFragmentDirections
+                    .actionDetailDestinationToListDestination()
+            )
         })
     }
 

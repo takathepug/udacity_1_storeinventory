@@ -16,18 +16,26 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imgView_android_logo"
+            android:id="@+id/imgView_fruit_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="@dimen/default_margin"
             android:adjustViewBounds="true"
-            android:contentDescription="@{sharedListDetailViewModel.fruit.name}"
+            android:contentDescription="@string/pear"
             android:scaleType="fitCenter"
-            android:src="@{sharedListDetailViewModel.fruit.image}"
+            android:src="@drawable/ic_pear_icon"
             app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_up"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_pear_icon" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.3" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_horizontal_up"
@@ -35,6 +43,60 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.2" />
+
+        <TextView
+            android:id="@+id/textView_fruit_name"
+            style="@style/TextBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/double_margin"
+            android:layout_marginEnd="16dp"
+            android:text="@string/fruit_name"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_middle"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgView_fruit_icon" />
+
+        <EditText
+            android:id="@+id/editTextText_fruit_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="Name"
+            android:autofillHints="name"
+            android:hint="@string/edit_text_password"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView_fruit_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_middle"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_up" />
+
+        <TextView
+            android:id="@+id/textView_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:autofillHints="name"
+            android:hint="@string/edit_text_password"
+            android:text="@string/company"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_middle"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_fruit_name" />
+
+        <EditText
+            android:id="@+id/editTextText_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="@string/company"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView_company"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_middle" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_horizontal"
@@ -47,11 +109,11 @@
             android:id="@+id/button_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/cancel"
             android:onClick="@{() -> sharedListDetailViewModel.onCancel()}"
-            app:layout_constraintHorizontal_chainStyle="spread"
+            android:text="@string/cancel"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/button_save"
+            app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline_horizontal" />
 
@@ -59,8 +121,8 @@
             android:id="@+id/button_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/save"
             android:onClick="@{() -> sharedListDetailViewModel.onSave()}"
+            android:text="@string/save"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/button_cancel"
