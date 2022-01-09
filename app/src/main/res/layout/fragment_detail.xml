@@ -59,14 +59,17 @@
 
         <EditText
             android:id="@+id/editTextText_fruit_name"
-            android:layout_width="wrap_content"
+            style="@style/EditTextContrastHint"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:autofillHints="name"
             android:ems="10"
+            android:hint="@string/edit_text_fruit_name"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="Name"
-            android:autofillHints="name"
-            android:hint="@string/edit_text_password"
+            android:text="@={sharedListDetailViewModel.fruit.name}"
             app:layout_constraintBaseline_toBaselineOf="@+id/textView_fruit_name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_middle"
@@ -74,12 +77,11 @@
 
         <TextView
             android:id="@+id/textView_company"
+            style="@style/TextBold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="16dp"
-            android:autofillHints="name"
-            android:hint="@string/edit_text_password"
+            android:layout_marginTop="@dimen/double_margin"
+            android:layout_marginEnd="@dimen/default_margin"
             android:text="@string/company"
             app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_middle"
             app:layout_constraintHorizontal_bias="1.0"
@@ -88,15 +90,83 @@
 
         <EditText
             android:id="@+id/editTextText_company"
-            android:layout_width="wrap_content"
+            style="@style/EditTextContrastHint"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:autofillHints="name"
             android:ems="10"
+            android:hint="@string/edit_text_company"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="@string/company"
+            android:text="@={sharedListDetailViewModel.fruit.company}"
             app:layout_constraintBaseline_toBaselineOf="@+id/textView_company"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_middle" />
+
+        <TextView
+            android:id="@+id/textView_quantity"
+            style="@style/TextBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/double_margin"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:text="@string/quantity_kgs"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_middle"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_company" />
+
+        <EditText
+            android:id="@+id/editTextNumberDecimal_quantity"
+            style="@style/EditTextContrastHint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:autofillHints="decimal"
+            android:ems="10"
+            android:hint="@string/edit_text_quantity"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
+            android:text="@={sharedListDetailViewModel.fruit.kilos}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView_quantity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_middle" />
+
+        <TextView
+            android:id="@+id/textView_description"
+            style="@style/TextBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/double_margin"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:text="@string/description"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_middle"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_quantity" />
+
+        <EditText
+            android:id="@+id/editTextTextMultiLine_desc"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:autofillHints="description"
+            android:background="@drawable/edit_text_style"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/edit_text_description"
+            android:inputType="textMultiLine"
+            android:maxLines="3"
+            android:padding="8dp"
+            android:text="@={sharedListDetailViewModel.fruit.description}"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_middle"
+            app:layout_constraintTop_toTopOf="@+id/textView_description" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_horizontal"

@@ -9,9 +9,11 @@
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
 
-    <string name="fruit_name">Fruit Name</string>
-    <string name="quantity_kgs">Quantity in kgs</string>
+    <string name="fruit_name">Fruit name</string>
+    <string name="quantity_kgs">Quantity in kg</string>
     <string name="company">Company</string>
+    <string name="description">Description</string>
+
     <string name="peach">Peach</string>
     <string name="pear">Pear</string>
     <string name="strawberry">Strawberry</string>
@@ -30,5 +32,16 @@
     <string name="img_fruit_store">Fruit store</string>
     <string name="edit_text_email">Enter email</string>
     <string name="edit_text_password">Enter password</string>
+    <string name="edit_text_fruit_name">Enter fruit name</string>
+    <string name="edit_text_company">Enter company name</string>
+    <string name="edit_text_quantity">Enter quantity in kg</string>
+    <string name="edit_text_description">Enter description</string>
     <string name="floating_button_add_fruit">Add fruit</string>
+
+    <!-- dummy -->
+    <string name="dummy_fruit_name">Dummy fruit name</string>
+    <string name="dummy_quantity_kgs">999</string>
+    <string name="dummy_company">Dummy Company INC</string>
+    <string name="dummy_description">Dummy description</string>
+
 </resources>

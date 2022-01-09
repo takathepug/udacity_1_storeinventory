@@ -37,10 +37,10 @@ class DetailFragment : Fragment() {
             false
         )
 
-        // Get the viewmodel
+        // Get the ViewModel
         viewModel = ViewModelProvider(this).get(SharedListDetailViewModel::class.java)
 
-        // Allow layout access to VieWModel
+        // Allow layout access to ViewModel
         binding.sharedListDetailViewModel = viewModel
 
         // Navigation
@@ -52,6 +52,8 @@ class DetailFragment : Fragment() {
     // Navigation
     private fun setupNavigation() {
         viewModel.eventCancelFruit.observe(viewLifecycleOwner, EventObserver {
+            viewModel.clearFruit()
+
             findNavController().navigate(
                 DetailFragmentDirections
                     .actionDetailDestinationToListDestination()
@@ -59,6 +61,8 @@ class DetailFragment : Fragment() {
         })
 
         viewModel.eventSaveFruit.observe(viewLifecycleOwner, EventObserver {
+            viewModel.saveNewFruit()
+
             findNavController().navigate(
                 DetailFragmentDirections
                     .actionDetailDestinationToListDestination()

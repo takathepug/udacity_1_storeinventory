@@ -28,17 +28,51 @@ class SharedListDetailViewModel : ViewModel() {
     val fruitList: LiveData<MutableList<Fruit>>
         get() = _fruitList
 
+    // new fruit from details screen
+    private var _fruit = MutableLiveData<Fruit>(Fruit())
+    val fruit: LiveData<Fruit>
+        get() = _fruit
+
     // Listeners
     fun onAddFruit() {
+        Log.d(TAG, "Resetting new fruit data")
+        clearFruit()
+
         _eventAddFruit.value = Event(Unit)
     }
 
     fun onSave() {
         Log.d(TAG, "Save fruit clicked")
+
+        _eventSaveFruit.value = Event(Unit)
     }
 
     fun onCancel() {
         Log.d(TAG, "Cancel fruit clicked")
+
+        _eventCancelFruit.value = Event(Unit)
+    }
+
+    // utils
+    fun clearFruit() {
+        _fruit.value?.let {
+            it.company = ""
+            it.description = ""
+            it.kilos = ""
+            it.name = ""
+        }
+    }
+
+    fun saveNewFruit() {
+        Log.d(TAG, "Adding new fruit to list: ${_fruit.value}")
+
+        _fruitList.value?.let { it ->
+            val l: MutableList<Fruit> = it
+            _fruit.value?.let { that ->
+                l.add(that)
+                _fruitList.setValue(l)
+            }
+        }
     }
 
 

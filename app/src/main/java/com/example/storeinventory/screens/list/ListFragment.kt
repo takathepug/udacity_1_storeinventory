@@ -33,7 +33,7 @@ class ListFragment : Fragment() {
             false
         )
 
-        // Get the viewmodel
+        // Get the ViewModel
         viewModel = ViewModelProvider(this).get(SharedListDetailViewModel::class.java)
 
         // Allow layout access to VieWModel
@@ -45,6 +45,8 @@ class ListFragment : Fragment() {
         // Navigation
         setupNavigateToDetail()
 
+        createFruitList()
+
         return binding.root
     }
 
@@ -55,5 +57,20 @@ class ListFragment : Fragment() {
                     .actionListDestinationToDetailDestination()
             )
         })
+    }
+
+    private fun createFruitList() {
+        val fruitListView = binding.linearListFruits
+
+        viewModel.fruitList.value?.forEach {
+            // inflate fruit item layout
+            val fruitListItemLayout = View.inflate(
+                context,
+                R.layout.item_fruit,
+                fruitListView
+            )
+
+            fruitListView.addView(fruitListItemLayout)
+        }
     }
 }
