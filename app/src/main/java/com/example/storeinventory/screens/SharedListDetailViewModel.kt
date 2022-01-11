@@ -29,7 +29,7 @@ class SharedListDetailViewModel : ViewModel() {
         get() = _fruitList
 
     // new fruit from details screen
-    private var _fruit = MutableLiveData<Fruit>(Fruit())
+    private var _fruit = MutableLiveData(Fruit())
     val fruit: LiveData<Fruit>
         get() = _fruit
 
@@ -66,14 +66,12 @@ class SharedListDetailViewModel : ViewModel() {
     fun saveNewFruit() {
         Log.d(TAG, "Adding new fruit to list: ${_fruit.value}")
 
-        _fruitList.value?.let { it ->
-            val l: MutableList<Fruit> = it
-            _fruit.value?.let { that ->
-                l.add(that)
-                _fruitList.setValue(l)
-            }
-        }
-    }
+        val currentList = _fruitList.value
+        currentList!!.add(_fruit.value!!)
 
+        _fruitList.value = currentList!!
+
+        val a = 1
+    }
 
 }

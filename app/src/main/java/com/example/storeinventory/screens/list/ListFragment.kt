@@ -13,6 +13,7 @@ import com.example.storeinventory.EventObserver
 import com.example.storeinventory.screens.SharedListDetailViewModel
 import com.example.storeinventory.R
 import com.example.storeinventory.databinding.FragmentListBinding
+import com.example.storeinventory.databinding.ItemFruitBinding
 
 class ListFragment : Fragment() {
     private val TAG: String = javaClass.simpleName
@@ -45,7 +46,9 @@ class ListFragment : Fragment() {
         // Navigation
         setupNavigateToDetail()
 
-        createFruitList()
+        viewModel.fruitList.observe(viewLifecycleOwner, {
+            createFruitList()
+        })
 
         return binding.root
     }
@@ -64,13 +67,16 @@ class ListFragment : Fragment() {
 
         viewModel.fruitList.value?.forEach {
             // inflate fruit item layout
-            val fruitListItemLayout = View.inflate(
-                context,
+            val fruitListItemLayout: ItemFruitBinding = DataBindingUtil.inflate(
+                layoutInflater,
                 R.layout.item_fruit,
-                fruitListView
+                fruitListView,
+                false
             )
 
-            fruitListView.addView(fruitListItemLayout)
+            fruitListItemLayout.textViewNameList.text = it.name
+
+            fruitListView.addView(fruitListItemLayout.root)
         }
     }
 }
