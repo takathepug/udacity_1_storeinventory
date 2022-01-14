@@ -38,7 +38,7 @@ class DetailFragment : Fragment() {
         )
 
         // Get the ViewModel
-        viewModel = ViewModelProvider(this).get(SharedListDetailViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity()).get(SharedListDetailViewModel::class.java)
 
         // Allow layout access to ViewModel
         binding.sharedListDetailViewModel = viewModel

@@ -35,7 +35,7 @@ class ListFragment : Fragment() {
         )
 
         // Get the ViewModel
-        viewModel = ViewModelProvider(this).get(SharedListDetailViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity()).get(SharedListDetailViewModel::class.java)
 
         // Allow layout access to VieWModel
         binding.sharedListDetailViewModel = viewModel
@@ -75,6 +75,10 @@ class ListFragment : Fragment() {
             )
 
             fruitListItemLayout.textViewNameList.text = it.name
+            fruitListItemLayout.textViewCompanyList.text = it.company
+            fruitListItemLayout.textViewKgList.text =
+                getString(R.string.list_item_quantity_kg, it.kilos)
+            fruitListItemLayout.textViewDescList.text = it.description
 
             fruitListView.addView(fruitListItemLayout.root)
         }

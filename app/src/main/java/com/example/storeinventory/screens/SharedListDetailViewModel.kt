@@ -71,7 +71,6 @@ class SharedListDetailViewModel : ViewModel() {
 
         _fruitList.value = currentList!!
 
-        val a = 1
     }
 
 }
