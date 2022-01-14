@@ -67,7 +67,7 @@ class SharedListDetailViewModel : ViewModel() {
         Log.d(TAG, "Adding new fruit to list: ${_fruit.value}")
 
         val currentList = _fruitList.value
-        currentList!!.add(_fruit.value!!)
+        currentList!!.add(_fruit.value!!.copy())
 
         _fruitList.value = currentList!!
 

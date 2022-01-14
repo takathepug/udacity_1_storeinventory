@@ -1,7 +1,6 @@
 package com.example.storeinventory.screens.list
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -47,7 +46,7 @@ class ListFragment : Fragment() {
         setupNavigateToDetail()
 
         viewModel.fruitList.observe(viewLifecycleOwner, {
-            createFruitList()
+            updateFruitList()
         })
 
         return binding.root
@@ -62,10 +61,11 @@ class ListFragment : Fragment() {
         })
     }
 
-    private fun createFruitList() {
+    private fun updateFruitList() {
         val fruitListView = binding.linearListFruits
 
         viewModel.fruitList.value?.forEach {
+
             // inflate fruit item layout
             val fruitListItemLayout: ItemFruitBinding = DataBindingUtil.inflate(
                 layoutInflater,
