@@ -42,7 +42,7 @@
 
     <!-- dummy -->
     <string name="dummy_fruit_name">Dummy fruit name</string>
-    <string name="dummy_quantity_kgs">999</string>
+    <string name="dummy_quantity_kgs">999kg</string>
     <string name="dummy_company">Dummy Company INC</string>
     <string name="dummy_description">Dummy description</string>
 
