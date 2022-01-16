@@ -40,6 +40,11 @@
         <action
             android:id="@+id/action_list_destination_to_detail_destination"
             app:destination="@id/detail_destination" />
+        <action
+            android:id="@+id/action_list_to_login_destination"
+            app:destination="@id/login_destination"
+            app:popUpTo="@id/login_destination"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/detail_destination"
