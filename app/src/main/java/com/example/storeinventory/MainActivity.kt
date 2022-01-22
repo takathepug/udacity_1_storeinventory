@@ -23,8 +23,6 @@ class MainActivity : AppCompatActivity() {
         drawerLayout = binding.mainActivityDrawerLayout
         navController = this.findNavController(R.id.nav_host_fragment)
         NavigationUI.setupActionBarWithNavController(this, navController)
-
-        setContentView(R.layout.activity_main)
     }
 
     override fun onSupportNavigateUp(): Boolean {

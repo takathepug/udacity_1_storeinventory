@@ -8,40 +8,43 @@
     <fragment
         android:id="@+id/login_destination"
         android:name="com.example.storeinventory.screens.login.LoginFragment"
-        android:label="fragment_login"
+        android:label="@string/log_in_title"
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_login_destination_to_welcome_destination"
-            app:destination="@id/welcome_destination" />
+            app:destination="@id/welcome_destination"
+            app:enterAnim="@anim/slide_in_right" />
     </fragment>
     <fragment
         android:id="@+id/welcome_destination"
         android:name="com.example.storeinventory.screens.welcome.WelcomeFragment"
-        android:label="WelcomeFragment"
+        android:label="@string/welcome_title"
         tools:layout="@layout/fragment_welcome">
         <action
             android:id="@+id/action_welcome_destination_to_instruction_destination"
-            app:destination="@id/instruction_destination" />
+            app:destination="@id/instruction_destination"
+            app:enterAnim="@anim/slide_in_right" />
     </fragment>
     <fragment
         android:id="@+id/instruction_destination"
         android:name="com.example.storeinventory.screens.instruction.InstructionFragment"
-        android:label="InstructionFragment"
+        android:label="@string/instructions_title"
         tools:layout="@layout/fragment_instruction" >
         <action
             android:id="@+id/action_instruction_destination_to_list_destination"
-            app:destination="@id/list_destination" />
+            app:destination="@id/list_destination"
+            app:enterAnim="@anim/slide_in_right" />
     </fragment>
     <fragment
         android:id="@+id/list_destination"
         android:name="com.example.storeinventory.screens.list.ListFragment"
-        android:label="ListFragment"
+        android:label="@string/list_title"
         tools:layout="@layout/fragment_list" >
         <action
             android:id="@+id/action_list_destination_to_detail_destination"
             app:destination="@id/detail_destination" />
         <action
-            android:id="@+id/action_list_to_login_destination"
+            android:id="@+id/action_list_destination_to_login_destination"
             app:destination="@id/login_destination"
             app:popUpTo="@id/login_destination"
             app:popUpToInclusive="true" />
@@ -49,10 +52,11 @@
     <fragment
         android:id="@+id/detail_destination"
         android:name="com.example.storeinventory.screens.detail.DetailFragment"
-        android:label="DetailFragment"
+        android:label="@string/detail_title"
         tools:layout="@layout/fragment_detail" >
         <action
             android:id="@+id/action_detail_destination_to_list_destination"
-            app:destination="@id/list_destination" />
+            app:destination="@id/list_destination"
+            app:exitAnim="@anim/slide_out_left" />
     </fragment>
 </navigation>
