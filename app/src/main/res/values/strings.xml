@@ -12,6 +12,7 @@
     <string name="password">Password</string>
     <string name="sign_up">Sign Up</string>
     <string name="log_in">Log In</string>
+    <string name="log_out">Log Out</string>
     <string name="next">Next</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
@@ -34,6 +35,12 @@
         We provide a list of available fruits at the fruit store. In our inventory you will find
         pears, peaches, strawberries and a wonderful selection of the best fruits from around the
         world.
+    </string>
+
+    <!-- Instructions screen -->
+    <string name="instructions_list">
+        In order to add a new item to your inventory please click on the button as show in
+        the picture below.
     </string>
 
     <!-- Content Descriptions -->

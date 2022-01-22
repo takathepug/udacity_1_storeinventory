@@ -13,7 +13,9 @@
         <action
             android:id="@+id/action_login_destination_to_welcome_destination"
             app:destination="@id/welcome_destination"
-            app:enterAnim="@anim/slide_in_right" />
+            app:enterAnim="@anim/slide_in_right"
+            app:popUpTo="@id/login_destination"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/welcome_destination"
@@ -23,7 +25,9 @@
         <action
             android:id="@+id/action_welcome_destination_to_instruction_destination"
             app:destination="@id/instruction_destination"
-            app:enterAnim="@anim/slide_in_right" />
+            app:enterAnim="@anim/slide_in_right"
+            app:popUpTo="@id/welcome_destination"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/instruction_destination"
@@ -33,7 +37,9 @@
         <action
             android:id="@+id/action_instruction_destination_to_list_destination"
             app:destination="@id/list_destination"
-            app:enterAnim="@anim/slide_in_right" />
+            app:enterAnim="@anim/slide_in_right"
+            app:popUpTo="@id/login_destination"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/list_destination"
@@ -46,8 +52,8 @@
         <action
             android:id="@+id/action_list_destination_to_login_destination"
             app:destination="@id/login_destination"
-            app:popUpTo="@id/login_destination"
-            app:popUpToInclusive="true" />
+            app:popUpTo="@id/list_destination"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/detail_destination"
@@ -57,6 +63,8 @@
         <action
             android:id="@+id/action_detail_destination_to_list_destination"
             app:destination="@id/list_destination"
-            app:exitAnim="@anim/slide_out_left" />
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/login_destination"
+            app:popUpToInclusive="false" />
     </fragment>
 </navigation>
