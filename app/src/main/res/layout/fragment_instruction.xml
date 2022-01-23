@@ -11,48 +11,89 @@
             type="com.example.storeinventory.screens.instruction.InstructionViewModel" />
     </data>
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/detail_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="@dimen/quarter_margin" >
+        android:layout_height="match_parent">
 
-        <LinearLayout
-            android:id="@+id/linear_instructions"
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView_instructions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center_horizontal" >
+            android:layout_margin="@dimen/quarter_margin"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-            <TextView
-                style="@style/TextBold"
+            <LinearLayout
+                android:id="@+id/linear_instructions"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/instructions_list" />
-
-            <ImageView
-                android:id="@+id/imageView_list_screen"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/half_margin"
-                android:contentDescription="@string/img_fruit_store"
-                android:background="@drawable/solid_2_border"
-                android:padding="8dp"
-                app:srcCompat="@drawable/list_screen" />
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
 
-            <Button
-                android:id="@+id/button_nex_instructions"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/default_margin"
-                android:layout_marginBottom="@dimen/default_margin"
-                android:onClick="@{() -> instructionViewModel.onNext()}"
-                android:text="@string/next" />
+                <TextView
+                    style="@style/TextBold"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/instructions_list" />
 
-        </LinearLayout>
+                <TextView
+                    style="@style/TextBold"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:text="@string/instructions_step_1" />
 
+                <ImageView
+                    android:id="@+id/imageView_list_screen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/half_margin"
+                    android:background="@drawable/solid_2_border"
+                    android:contentDescription="@string/img_instructions_list"
+                    android:padding="8dp"
+                    app:srcCompat="@drawable/list_screen" />
 
+                <TextView
+                    style="@style/TextBold"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:text="@string/instructions_step_2" />
 
+                <ImageView
+                    android:id="@+id/imageView_add_screen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/half_margin"
+                    android:background="@drawable/solid_2_border"
+                    android:contentDescription="@string/img_instructions_add"
+                    android:padding="8dp"
+                    app:srcCompat="@drawable/add_screen" />
 
-    </ScrollView>
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView >
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.8" />
+
+        <Button
+            android:id="@+id/button_nex_instructions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> instructionViewModel.onNext()}"
+            android:text="@string/next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

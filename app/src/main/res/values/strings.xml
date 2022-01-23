@@ -39,8 +39,13 @@
 
     <!-- Instructions screen -->
     <string name="instructions_list">
-        In order to add a new item to your inventory please click on the button as show in
-        the picture below.
+        In order to add a new item to your inventory please follow these steps.
+    </string>
+    <string name="instructions_step_1">
+        (1) Click on the button as show in the picture below.
+    </string>
+    <string name="instructions_step_2">
+        (2) Provide the information for the new item in the inventory and click Save
     </string>
 
     <!-- Content Descriptions -->
@@ -53,6 +58,8 @@
     <string name="edit_text_quantity">Enter quantity in kg</string>
     <string name="edit_text_description">Enter description</string>
     <string name="floating_button_add_fruit">Add fruit</string>
+    <string name="img_instructions_list">Inventory image instructions</string>
+    <string name="img_instructions_add">Add fruit image instructions</string>
 
     <!-- dummy -->
     <string name="dummy_fruit_name">Dummy fruit name</string>
