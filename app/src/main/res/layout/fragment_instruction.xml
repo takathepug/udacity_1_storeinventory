@@ -5,30 +5,94 @@
     tools:context=".InstructionFragment">
 
     <data>
+
         <variable
             name="instructionViewModel"
             type="com.example.storeinventory.screens.instruction.InstructionViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/detail_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView_instructions"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Here should go the instructions" />
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/quarter_margin"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-        <Button
-            android:id="@+id/button2"
+            <LinearLayout
+                android:id="@+id/linear_instructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextBold"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/instructions_list" />
+
+                <TextView
+                    style="@style/TextBold"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:text="@string/instructions_step_1" />
+
+                <ImageView
+                    android:id="@+id/imageView_list_screen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/half_margin"
+                    android:background="@drawable/solid_2_border"
+                    android:contentDescription="@string/img_instructions_list"
+                    android:padding="8dp"
+                    app:srcCompat="@drawable/list_screen" />
+
+                <TextView
+                    style="@style/TextBold"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:text="@string/instructions_step_2" />
+
+                <ImageView
+                    android:id="@+id/imageView_add_screen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/half_margin"
+                    android:background="@drawable/solid_2_border"
+                    android:contentDescription="@string/img_instructions_add"
+                    android:padding="8dp"
+                    app:srcCompat="@drawable/add_screen" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView >
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/default_margin"
-            android:text="@string/next"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.8" />
+
+        <Button
+            android:id="@+id/button_nex_instructions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:onClick="@{() -> instructionViewModel.onNext()}"
+            android:text="@string/next"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

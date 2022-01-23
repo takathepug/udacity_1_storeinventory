@@ -23,9 +23,10 @@
             app:layout_constraintGuide_percent="0.3" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageView_list_screen"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginTop="@dimen/half_margin"
             android:contentDescription="@string/img_fruit_store"
             android:scaleType="fitCenter"
             app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_up"
@@ -46,7 +47,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView_list_screen" />
 
         <TextView
             android:id="@+id/textView_what_details"
