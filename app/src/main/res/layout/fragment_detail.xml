@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".screens.detail.DetailFragment">
+
+    <data>
+        <variable
+            name="sharedListDetailViewModel"
+            type="com.example.storeinventory.screens.SharedListDetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/detail_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ImageView
+            android:id="@+id/imgView_fruit_icon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/default_margin"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/pear"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_pear_icon"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_up"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_pear_icon" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.3" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_horizontal_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2" />
+
+        <TextView
+            android:id="@+id/textView_fruit_name"
+            style="@style/TextBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/double_margin"
+            android:layout_marginEnd="16dp"
+            android:text="@string/fruit_name"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_middle"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgView_fruit_icon" />
+
+        <EditText
+            android:id="@+id/editTextText_fruit_name"
+            style="@style/EditTextContrastHint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:autofillHints="name"
+            android:ems="10"
+            android:hint="@string/edit_text_fruit_name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="@={sharedListDetailViewModel.fruit.name}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView_fruit_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_middle"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_up" />
+
+        <TextView
+            android:id="@+id/textView_company"
+            style="@style/TextBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/double_margin"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:text="@string/company"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_middle"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_fruit_name" />
+
+        <EditText
+            android:id="@+id/editTextText_company"
+            style="@style/EditTextContrastHint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:autofillHints="name"
+            android:ems="10"
+            android:hint="@string/edit_text_company"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="@={sharedListDetailViewModel.fruit.company}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView_company"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_middle" />
+
+        <TextView
+            android:id="@+id/textView_quantity"
+            style="@style/TextBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/double_margin"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:text="@string/quantity_kgs"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_middle"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_company" />
+
+        <EditText
+            android:id="@+id/editTextNumberDecimal_quantity"
+            style="@style/EditTextContrastHint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:autofillHints="decimal"
+            android:ems="10"
+            android:hint="@string/edit_text_quantity"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
+            android:text="@={sharedListDetailViewModel.fruit.kilos}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView_quantity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_middle" />
+
+        <TextView
+            android:id="@+id/textView_description"
+            style="@style/TextBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/double_margin"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:text="@string/description"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_middle"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_quantity" />
+
+        <EditText
+            android:id="@+id/editTextTextMultiLine_desc"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:autofillHints="description"
+            android:background="@drawable/solid_2_border"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/edit_text_description"
+            android:inputType="textMultiLine"
+            android:maxLines="3"
+            android:padding="8dp"
+            android:text="@={sharedListDetailViewModel.fruit.description}"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_middle"
+            app:layout_constraintTop_toTopOf="@+id/textView_description" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.8" />
+
+        <Button
+            android:id="@+id/button_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> sharedListDetailViewModel.onCancel()}"
+            android:text="@string/cancel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_save"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal" />
+
+        <Button
+            android:id="@+id/button_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> sharedListDetailViewModel.onSave()}"
+            android:text="@string/save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button_cancel"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

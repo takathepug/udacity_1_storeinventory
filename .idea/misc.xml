@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/EyE/AndroidStudioProjects/StoreInventory/app/src/main/res/drawable/border_bottom.xml" value="0.4197916666666667" />
+        <entry key="..\:/Users/EyE/AndroidStudioProjects/StoreInventory/app/src/main/res/drawable/edit_text_style.xml" value="0.4197916666666667" />
+        <entry key="..\:/Users/EyE/AndroidStudioProjects/StoreInventory/app/src/main/res/drawable/ic__strawberry_icon.xml" value="0.4197916666666667" />
+        <entry key="..\:/Users/EyE/AndroidStudioProjects/StoreInventory/app/src/main/res/drawable/ic_peach_icon.xml" value="0.4239583333333333" />
+        <entry key="..\:/Users/EyE/AndroidStudioProjects/StoreInventory/app/src/main/res/drawable/ic_pear_icon.xml" value="0.4197916666666667" />
+        <entry key="..\:/Users/EyE/AndroidStudioProjects/StoreInventory/app/src/main/res/drawable/solid_border_all_sides.xml" value="0.4197916666666667" />
+        <entry key="..\:/Users/EyE/AndroidStudioProjects/StoreInventory/app/src/main/res/drawable/solid_purple_2_border.xml" value="0.1421875" />
+        <entry key="..\:/Users/EyE/AndroidStudioProjects/StoreInventory/app/src/main/res/layout/activity_main.xml" value="0.16" />
+        <entry key="..\:/Users/EyE/AndroidStudioProjects/StoreInventory/app/src/main/res/layout/fragment_detail.xml" value="0.4" />
+        <entry key="..\:/Users/EyE/AndroidStudioProjects/StoreInventory/app/src/main/res/layout/fragment_instruction.xml" value="0.3516949152542373" />
+        <entry key="..\:/Users/EyE/AndroidStudioProjects/StoreInventory/app/src/main/res/layout/fragment_list.xml" value="0.176" />
+        <entry key="..\:/Users/EyE/AndroidStudioProjects/StoreInventory/app/src/main/res/layout/fragment_login.xml" value="0.4" />
+        <entry key="..\:/Users/EyE/AndroidStudioProjects/StoreInventory/app/src/main/res/layout/fragment_welcome.xml" value="0.264" />
+        <entry key="..\:/Users/EyE/AndroidStudioProjects/StoreInventory/app/src/main/res/layout/item_fruit.xml" value="0.536" />
+        <entry key="..\:/Users/EyE/AndroidStudioProjects/StoreInventory/app/src/main/res/menu/otions_menu.xml" value="0.30520833333333336" />
+        <entry key="..\:/Users/EyE/AppData/Local/Android/Sdk/platforms/android-31/data/res/drawable/sym_def_app_icon.xml" value="0.4203125" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
