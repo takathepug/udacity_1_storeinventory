@@ -9,6 +9,11 @@
             type="com.example.storeinventory.screens.SharedListDetailViewModel" />
     </data>
 
+    <!--
+    ConstraintLayout to arrange the elements in 2 columns using a guideline:
+    * Name, company and quantity on a stack in the left column
+    * Description, text area alone on the right column
+    -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
