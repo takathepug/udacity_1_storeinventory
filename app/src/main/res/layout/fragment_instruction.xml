@@ -11,6 +11,12 @@
             type="com.example.storeinventory.screens.instruction.InstructionViewModel" />
     </data>
 
+    <!--
+    ConstraintLayout that gives all the space to a scroll view containing
+    a vertical LinearLayout that shows instructions text and images
+    The bottom contains a guideline to include a single button to move to the
+    next screen
+    -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/detail_layout"
         android:layout_width="match_parent"
@@ -25,6 +31,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
+            <!-- Simple arrangement of instruction text and images as a vertical set -->
             <LinearLayout
                 android:id="@+id/linear_instructions"
                 android:layout_width="match_parent"

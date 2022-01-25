@@ -10,6 +10,13 @@
             type="com.example.storeinventory.screens.SharedListDetailViewModel" />
     </data>
 
+    <!--
+    ConstraintLayout to arrange a complex layout of elements using 3 guides
+    to conceptually arrange the screen into:
+    * Fruit icon on top
+    * Labels and text input areas in the middle in 2 columns
+    * Buttons at the bottom
+    -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/detail_layout"
         android:layout_width="match_parent"

@@ -10,6 +10,11 @@
             type="com.example.storeinventory.screens.SharedListDetailViewModel" />
     </data>
 
+    <!--
+        ConstraintLayout to arrange a floating button on the bottom-right
+        and give all the space to a scroll view with a LinearLayout where
+        new items will be appended vertically
+     -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -36,6 +41,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" >
 
+            <!-- Single child of NestedScrollView where new items are appended vertically -->
             <LinearLayout
                 android:id="@+id/linear_list_fruits"
                 android:layout_width="match_parent"

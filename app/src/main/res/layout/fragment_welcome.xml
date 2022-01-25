@@ -9,6 +9,10 @@
             type="com.example.storeinventory.screens.welcome.WelcomeViewModel" />
     </data>
 
+    <!--
+    ConstraintLayout that contains a guideline to separate the header with an image
+    from the welcome text, and arranges a button at the bottom
+    -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/welcome_layout"
         android:layout_width="match_parent"
